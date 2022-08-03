@@ -1,0 +1,98 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* layer base preset */
+/* following when compiled will be inserted at the end of base styles */
+@layer base {
+  /* @font-face {
+    font-family: Oswald;
+    src: url(@/assets/fonts/Oswald/Oswald-Bold.ttf) format("​truetype​");
+  } */
+
+  body {
+    @apply bg-gray-100 dark:bg-gray-900;
+  }
+
+  h1 {
+    @apply text-5xl dark:text-white;
+  }
+
+  h2 {
+    @apply text-3xl dark:text-white;
+  }
+
+  h3 {
+    @apply text-2xl dark:text-white;
+  }
+
+  h4 {
+    @apply text-xl dark:text-white;
+  }
+}
+
+.error {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+
+@layer components {
+  /* .primary_button {
+    @apply bg-gradient-to-r from-primary to-gradient text-white p-3 rounded-3xl px-8;
+  } */
+}
+@layer utilities {
+  /* .form-panel {
+        @apply md: mt-0 md:col-span-2 bg-white shadow sm:rounded-md px-4 py-5 sm:p-6;
+    }
+
+    .form-simple {
+        @apply mt-1 focus: ring-primary focus:border-primary block w-full shadow-sm sm:text-sm border-gray-300 rounded-md;
+    }
+
+    .form-underline {
+        @apply m-0 block w-full px-2 border-0 border-b-2 border-gray-200 focus: ring-0 focus:border-blue-300;
+    }
+
+    .form-gray {
+        @apply mt-1 block w-full rounded-md bg-gray-200 border-transparent focus: border-gray-500 focus:bg-white;
+    }
+
+    .form-dropdown {
+        @apply mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus: outline-none focus:ring-primary focus:border-indigo-500 sm:text-sm;
+    } */
+}
+
+.custom-file-input::-webkit-file-upload-button {
+  visibility: hidden;
+  margin-left: -80px;
+}
+.custom-file-input::before {
+  content: "Browse";
+  display: inline-block;
+  font-size: 13px;
+  outline: none;
+  -webkit-user-select: none;
+  cursor: pointer;
+  font-weight: 700;
+  background-color: #2196f3;
+  color: white;
+  height: 40px;
+  padding: 10px 10px 10px 10px;
+}
+@media screen and (max-width: 550px) {
+  .custom-file-input::before {
+    padding: 10px 10px 10px 10px;
+  }
+}
+.custom-file-input:active::before {
+  background: #2196f3;
+}
